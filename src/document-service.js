@@ -13,4 +13,12 @@ export class DocumentService {
   } catch (error) {
     return [];
   }
+
+  async uploadDocument() {
+    const response = await fetch(this.baseUrl + "/api/v1/upload")
+    this.documentList = await response.json();
+    return this.documentList;
+  } catch (error) {
+    return [];
+  }
 }

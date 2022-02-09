@@ -1,9 +1,7 @@
 <script>
-  import {onMount} from 'svelte'
-  import { DocumentService } from "./document-service";
-
-  const documentService = new DocumentService("http://localhost:4000");
-
+  import {onMount, getContext} from 'svelte'
+  const documentService = getContext("DocumentService");
+  
   let documentList;
   onMount(async () => {
     documentList = await documentService.getDocuments()
@@ -13,7 +11,7 @@
 <h3 class="uk-heading-divider">
   Document List
 </h3>
-<div class="uk-table uk-table-divider">
+<div class="uk-table uk-table-striped">
   <table class="uk-table">
     <thead>
       <th>
