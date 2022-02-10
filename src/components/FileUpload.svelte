@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   let postVar;
   let fileVar;
 
@@ -9,7 +9,7 @@
     dataArray.append("FileName", postVar);
     dataArray.append("uploadFile", fileVar);
 
-    fetch("http://localhost:4000/api/v1/upload", {
+    fetch("http://localhost:4000/api/v1/document", {
       method: "POST",
       headers: [["Content-Type", "multipart/form-data"]],
       body: dataArray
@@ -23,9 +23,20 @@
         console.log("Upload failed")
       });
   }
-</script>
+</script> -->
 
-<div>
+ <!-- point action to upload api endpoint -->
+ <form action="http://localhost:3000/#/documents" method="post" enctype="multipart/form-data">
+         
+  upload a file<br>
+  <!-- specify a file on local machine user wishes to upload -->
+  <input type="file" name="myfile" />
+
+  <input type="submit" value="upload file..." />
+</form>
+
+
+<!-- <div>
   <form on:submit={submitForm}>
     <input
       type="text"
@@ -35,8 +46,9 @@
     <br />
     <input 
       type="file" 
+      name="usrFile"
       bind:files={fileVar} />
     <br />
-    <input type="submit" />
+    <input type="submit"/>
   </form>
-</div>
+</div> -->

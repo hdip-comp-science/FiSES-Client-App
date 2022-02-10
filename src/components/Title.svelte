@@ -1,26 +1,25 @@
 <script>
   import fises from "/src/assets/fises.png";
-  export let title;
-  export let subTitle;
+  import {title, subTitle} from "../stores.js"
 </script>
 
 <div class="uk-width-2-3@m  uk-card uk-card-default uk-padding-small uk-visible@m">
   <div class="uk-grid">
     <div class="uk-width-1-6@m">
-      <a href="/"> <img src="{fises}" width="200" alt="company-logo"/> </a>
+      <a href="/"> <img src="{fises}" width="150" alt="company-logo"/> </a>
     </div>
     <div class="uk-width-expand@m uk-text-left">
       <div class="title">
-        {title}
+        {$title}
       </div>
       <div class="uk-text-muted uk-text-small">
-        {subTitle}
+        {$subTitle}
       </div>
     </div>
     <div class="uk-card uk-card-small uk-text-center uk-padding-remove">
       <a target="_blank" href="https://github.com/hdip-comp-science/FiSES-Client-App">
         <div>
-          <i class="fab fa-github-square fa-3x" style="color:rgb(95, 96, 173)" title="Source repo"  uk-tooltip></i>
+          <i class="fab fa-github-square fa-3x" style="color:rgb(95, 96, 173)" title="Source repo" pos="bottom" uk-tooltip></i>
         </div>
         <div class="uk-width-expand@m uk-text-left">
           <div class="uk-text-muted uk-text-center" style="font-size:xx-small">FiSES 0.1</div>
