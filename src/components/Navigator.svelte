@@ -1,6 +1,7 @@
 <script>
   import Title from "./Title.svelte";
-  import {navBar} from "../stores"
+  import {navBar} from "../stores";
+
 </script>
 
 <div class="uk-flex uk-flex-center uk-flex-middle uk-text-center uk-grid-small" uk-grid>

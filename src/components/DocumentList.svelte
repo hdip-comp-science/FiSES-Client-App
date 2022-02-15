@@ -15,13 +15,13 @@
   <table class="uk-table">
     <thead>
       <th>
-        ID
-      </th>
-      <th>
-        Body
+        Name
       </th>
       <th>
         Author
+      </th>
+      <th>
+        Version
       </th>
     </thead>
     <tbody class="uk-text-left">
@@ -29,8 +29,8 @@
         {#each documentList as document}
           <tr>
             <td>{document.ID}</td>
-            <td>{document.Body}</td>
             <td>{document.Author}</td>
+            <td>{document.Body}</td>
           </tr>
         {/each}
       {/if}

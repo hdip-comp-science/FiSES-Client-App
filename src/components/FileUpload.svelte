@@ -1,54 +1,49 @@
-<!-- <script>
-  let postVar;
+<script>
+  let postVar="myfile";
   let fileVar;
+
 
   function submitForm(){
     event.preventDefault();
 
-    const dataArray = new FormData();
-    dataArray.append("FileName", postVar);
-    dataArray.append("uploadFile", fileVar);
+    // const dataArray = new FormData();
+    // dataArray.append("myfile", postVar);
+    // dataArray.append("uploadFile", fileVar);
 
-    fetch("http://localhost:4000/api/v1/document", {
-      method: "POST",
-      headers: [["Content-Type", "multipart/form-data"]],
-      body: dataArray
-    })
-      .then(response => {
-        // Successfully uploaded
-        console.log("Successfully uploaded file")
-      })
-      .catch(error => {
-        // 
-        console.log("Upload failed")
-      });
+    let url = 'http://localhost:4000/api/v1/upload'
+
+    const formdata = new FormData();
+    formdata.append("myfile", postVar); 
+    formdata.append("dataFile", fileVar);
+
+    const requestOptions = {
+      method: 'POST',
+      body: formdata
+    };
+
+    fetch(url, requestOptions)
+    // .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
   }
-</script> -->
 
- <!-- point action to upload api endpoint -->
- <form action="http://localhost:3000/#/documents" method="post" enctype="multipart/form-data">
-         
-  upload a file<br>
-  <!-- specify a file on local machine user wishes to upload -->
-  <input type="file" name="myfile" />
-
-  <input type="submit" value="upload file..." />
-</form>
+</script>
 
 
-<!-- <div>
+
+<div>
   <form on:submit={submitForm}>
     <input
-      type="text"
+      type="hidden"
       bind:value={postVar}
       placeholder={"Enter File Name"}
     />
+    <!-- {@debug postVar} -->
     <br />
     <input 
       type="file" 
-      name="usrFile"
       bind:files={fileVar} />
-    <br />
+      {@debug fileVar}
     <input type="submit"/>
   </form>
-</div> -->
+</div>

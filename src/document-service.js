@@ -12,6 +12,7 @@ export class DocumentService {
     this.documentList = await response.json();
     return this.documentList;
   } catch (error) {
+    console.error('Error:', error);
     return [];
   }
 

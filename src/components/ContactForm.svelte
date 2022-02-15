@@ -11,19 +11,19 @@
             <fieldset class="uk-fieldset">
         
                 <div class="uk-margin">
-                    <label>name</label>
+                    <label>name *</label>
                     <input class="uk-input" type="name" name="name" placeholder="Enter your name..."required>
                 </div>
                 <input type="hidden" name="_subject" value="New Email">
 
                 <div class="uk-margin">
-                  <label>email</label>
+                  <label>email *</label>
                   <i class="mail icon"></i>
                   <input class="uk-input" type="email" name="email" placeholder="Enter your email..." required>
                 </div>
         
                 <div class="uk-margin">
-                  <label>message</label>
+                  <label>message *</label>
                   <textarea class="uk-textarea" rows="8" type="text" placeholder="write your message here" required></textarea>
                 </div>
         
