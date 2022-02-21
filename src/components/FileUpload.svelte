@@ -1,49 +1,31 @@
 <script>
-  let postVar="myfile";
-  let fileVar;
-
-
-  function submitForm(){
-    event.preventDefault();
-
-    // const dataArray = new FormData();
-    // dataArray.append("myfile", postVar);
-    // dataArray.append("uploadFile", fileVar);
-
-    let url = 'http://localhost:4000/api/v1/upload'
-
-    const formdata = new FormData();
-    formdata.append("myfile", postVar); 
-    formdata.append("dataFile", fileVar);
-
-    const requestOptions = {
-      method: 'POST',
-      body: formdata
-    };
-
-    fetch(url, requestOptions)
-    // .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+  let files;
+  let statusCode=0;
+ 
+  async function handleSubmit() {
+    if (files.length > 0) {
+      const formData = new FormData();
+      formData.append("file", files[0]);
+      const response = await fetch("http://localhost:4000/api/v1/upload", {
+        method: "POST",
+        body: formData
+      });
+      statusCode = response.status;
+      if (statusCode == 200) {
+        console.log( 'File upload successful, status code: ' +
+            response.status );
+      } else {
+        console.log( 'Failed to upload file, status code: ' +
+            response.status );
+        return;
+      }
+    }
   }
-
+  // check if status code = 200. 
 </script>
-
-
-
-<div>
-  <form on:submit={submitForm}>
-    <input
-      type="hidden"
-      bind:value={postVar}
-      placeholder={"Enter File Name"}
-    />
-    <!-- {@debug postVar} -->
-    <br />
-    <input 
-      type="file" 
-      bind:files={fileVar} />
-      {@debug fileVar}
-    <input type="submit"/>
-  </form>
-</div>
+ 
+<form on:submit|preventDefault={handleSubmit}>
+  <label for="file">File</label>
+  <input required id="file" type="file" bind:files />
+  <input type="submit" value="Upload file" />
+</form>

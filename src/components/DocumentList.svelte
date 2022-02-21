@@ -15,7 +15,7 @@
   <table class="uk-table">
     <thead>
       <th>
-        Name
+        Title
       </th>
       <th>
         Author
@@ -28,9 +28,9 @@
       {#if documentList}
         {#each documentList as document}
           <tr>
-            <td>{document.ID}</td>
+            <td>{document.Title}</td>
             <td>{document.Author}</td>
-            <td>{document.Body}</td>
+            <td>{document.Version}</td>
           </tr>
         {/each}
       {/if}
