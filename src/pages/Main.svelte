@@ -2,7 +2,7 @@
   import {title, subTitle, navBar, welcomeBar} from "../stores"
   import fises from "/src/assets/fises.png";
   title.set("Field Service Engineering Solutions");
-  subTitle.set("Sign up or Log in");
+  subTitle.set("Log in");
 
   navBar.set({
     bar: welcomeBar
@@ -11,7 +11,7 @@
 
 <div uk-grid>
   <div class="uk-width-1-2@m uk-text-center">
-    <img width="200" src="{fises}" alt="homer">
+    <img width="200" src="{fises}" alt="company-logo">
     <p> Lets do this thing </p>
   </div>
   <div class="uk-width-1-2@m uk-text-left">

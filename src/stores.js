@@ -25,6 +25,11 @@ export const mainBar = [{
   icon: "fas fa-info-circle",
   colour: "color:rgb(152, 37, 37)",
   link: "/#/contact",
+}, {
+  title: "FileViewer",
+  icon: "fas fa-book-open",
+  colour: "color:rgb(152, 37, 37)",
+  link: "/#/file",
 }];
 
 
