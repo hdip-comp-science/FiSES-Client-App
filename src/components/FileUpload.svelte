@@ -21,7 +21,6 @@
       }
     }
   }
-  // check if status code = 200. 
 </script>
  
 <form on:submit|preventDefault={handleSubmit}>
