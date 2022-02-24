@@ -5,8 +5,10 @@
   let documentList;
   onMount(async () => {
     documentList = await documentService.getDocuments()
-  })
+  });
+
 </script>
+
 
 <h3 class="uk-heading-divider">
   Document List
@@ -28,9 +30,9 @@
       {#if documentList}
         {#each documentList as document}
           <tr>
-            <td>{document.Title}</td>
-            <td>{document.Author}</td>
-            <td>{document.Version}</td>
+            <td><a href="http://localhost:4000/api/v1/document/{document.ID}" target="_blank">{document.title}</a></td>
+            <td>{document.author}</td>
+            <td>{document.version}</td>
           </tr>
         {/each}
       {/if}

@@ -8,7 +8,6 @@
   <Title title="Field Services Engineering Solutions" subTitle="Welcome" />
   <div>
     <ul class="uk-iconnav uk-margin-left uk-margin-right">
-
       {#each $navBar.bar as nav}
         <a href="{nav.link}" class="uk-card uk-card-small uk-card-hover uk-padding-small">
           <i class="{nav.icon}" style="{nav.colour}" uk-tooltip="title: {nav.title}; pos:bottom"></i>
