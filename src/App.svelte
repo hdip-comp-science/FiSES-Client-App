@@ -7,6 +7,7 @@
   import Contact from "./pages/Contact.svelte";
   import Navigator from "./components/Navigator.svelte";
   import Router from "svelte-spa-router";
+  import Login from "./pages/Login.svelte";
 
   // enable the sharing of doc-service obj using context
   setContext("DocumentService", new DocumentService("http://localhost:4000"));
@@ -16,6 +17,7 @@
     "/" : Main,
     "/documents": Docs,
     "/contact": Contact,
+    "/login": Login,
     "/file": FileViewer,
   }
 </script>
