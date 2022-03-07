@@ -1,36 +1,36 @@
 
 <div>
-    <div class="uk-card uk-card-default">
-        <div class="uk-card-media-top">
-          <h3 class="uk-card-title">Get in touch</h3>
-          <p>We're not around but we still want to hear from you! <br>Leave us a note:</p>
-        </div>
-        <div class="uk-card-body">
+  <div class="uk-card uk-card-default">
+      <div class="uk-card-media-top">
+        <h3 class="uk-card-title">Get in touch</h3>
+        <p>We're not around but we still want to hear from you! <br>Leave us a note:</p>
+      </div>
+      <div class="uk-card-body">
 
-          <form action="https://formsubmit.co/ianhutch90@gmail.com" method="POST">
-            <fieldset class="uk-fieldset">
-        
-                <div class="uk-margin">
-                    <label>name *</label>
-                    <input class="uk-input" type="name" name="name" placeholder="Enter your name..."required>
-                </div>
-                <input type="hidden" name="_subject" value="New Email">
+        <form action="https://formsubmit.co/ianhutch90@gmail.com" method="POST">
+          <fieldset class="uk-fieldset">
+      
+              <div class="uk-margin">
+                  <label for="name">name *</label>
+                  <input class="uk-input" type="name" name="name" placeholder="Enter your name..."required>
+              </div>
+              <input type="hidden" name="_subject" value="New Email">
 
-                <div class="uk-margin">
-                  <label>email *</label>
-                  <i class="mail icon"></i>
-                  <input class="uk-input" type="email" name="email" placeholder="Enter your email..." required>
-                </div>
-        
-                <div class="uk-margin">
-                  <label>message *</label>
-                  <textarea class="uk-textarea" rows="8" type="text" placeholder="write your message here" required></textarea>
-                </div>
-        
-            </fieldset>
-            <button class="uk-button uk-button-primary">Send</button>
-        </form>
+              <div class="uk-margin">
+                <label for="email">email *</label>
+                <i class="mail icon"></i>
+                <input class="uk-input" type="email" name="email" placeholder="Enter your email..." required>
+              </div>
+      
+              <div class="uk-margin">
+                <label for="message">message *</label>
+                <textarea class="uk-textarea" rows="8" type="text" placeholder="write your message here" required></textarea>
+              </div>
+      
+          </fieldset>
+          <button class="uk-button uk-button-primary">Send</button>
+      </form>
 
-        </div>
-    </div>
+      </div>
+  </div>
 </div>

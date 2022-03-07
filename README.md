@@ -1,48 +1,39 @@
-# Svelte + Vite
 
-This template should help get you started developing with Svelte in Vite.
+# svelte-client-app
 
-## Recommended IDE Setup
+This svelte application is one part of a project submission for Higher Diploma in Computer Science. It is aimed to conosolodate common tools required by the service engineering industry into a single application. It is integrated with keycloak (open source identity and access management). 
 
-[VSCode](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## config
 
-## Need an official Svelte framework?
+    npm install
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+    configured keycloak client (protocol: openid-connect, access type: public )
 
-## Technical considerations
+    update your keycloak client redirect URIs and Web origins to http://localhost:5000/* and http://localhost:5000/
+       
+    save keycloak.json to /public (get json contents from your keycloak admin console.  client -> installation tab -> Keycloak OIDC json)
 
-**Why use this over SvelteKit?**
+## run dev server
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-  `vite dev` and `vite build` wouldn't work in a SvelteKit environment, for example.
+    npm run dev
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+    (see svelte starter template docs for more options)
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+## JWT token
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+the jwt token from keycloak is stored in the `userInfo` store under token.
 
-**Why include `.vscode/extensions.json`?**
+your backend should validate this, either by consuming the `/protocol/openid-connect/certs` endpoint or storing the public key/cert from keycloak.
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
 
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+## References
+[1] [Svelte Documentation](https://svelte.dev/docs)<br>
+[2] [JavaScript Adapter](https://github.com/keycloak/keycloak-documentation/blob/main/securing_apps/topics/oidc/javascript-adapter.adoc)<br>
+[3] [Svelte App with Keycloak - Medium](https://medium.com/keycloak/securing-a-svelte-app-golang-service-with-keycloak-e095774e5a03)<br>
+[4] [Mathew Huie | svelte-keycloak](https://github.com/mphuie/svelte-keycloak)<br>
+[5] [Uploading a File](https://dev.to/brunooliveira/uploading-a-file-svelte-form-and-springboot-backend-18m6) <br>
+[6] [Form Submit](https://formsubmit.co/) <br>
+[7] [Font Awesome Icons](https://fontawesome.com/start) <br>
+[8] [UIKit](https://getuikit.com/docs/introduction) <br>
+[9] [Keycloak Guide to Securing Applications](https://www.keycloak.org/securing-apps/vue) <br>

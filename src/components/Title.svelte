@@ -1,12 +1,12 @@
 <script>
-  import fises from "/src/assets/fises.png";
-  import {title, subTitle} from "../stores.js"
+  // import fises from "../assets/fises.png";
+  import {title, subTitle} from "../store";
 </script>
 
 <div class="uk-width-2-3@m  uk-card uk-card-default uk-padding-small uk-visible@m">
   <div class="uk-grid">
     <div class="uk-width-1-6@m">
-      <a href="/"> <img src="{fises}" width="150" alt="company-logo"/> </a>
+      <!-- <a href="/"> <img src="{fises}" width="150" alt="company-logo"/> </a> -->
     </div>
     <div class="uk-width-expand@m uk-text-left">
       <div class="title">
