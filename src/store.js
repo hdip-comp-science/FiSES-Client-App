@@ -8,9 +8,6 @@ export const welcomeBar = [
     colour: "color:green",
     link: "/#/documents",
   },
-  {
-    
-  },
 ];
 
 export const mainBar = [{
@@ -24,10 +21,10 @@ export const mainBar = [{
   colour: "color:rgb(152, 37, 37)",
   link: "/#/contact",
 }, {
-  title: "Log In",
-  icon: "fa-solid fa-right-to-bracket fa-2x",
-  colour: "color:green",
-  link: "/#/login",
+  title: "Home",
+  icon: "fas fa-home fa-2x",
+  colour: "color:rgb(152, 37, 37)",
+  link: "/",
 }];
 
 

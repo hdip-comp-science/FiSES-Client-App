@@ -2,7 +2,7 @@ export class DocumentService {
   documentList = []
   baseUrl = "";
 
-  constructor(baseUrl) {
+  constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
   }
 
@@ -10,7 +10,7 @@ export class DocumentService {
     const response = await fetch(this.baseUrl + "/api/v1/document")
     this.documentList = await response.json();
     return this.documentList;
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error:', error);
     return [];
   }

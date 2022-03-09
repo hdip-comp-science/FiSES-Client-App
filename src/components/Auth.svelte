@@ -8,35 +8,41 @@
   navBar.set({
     bar: welcomeBar
   });
-
+	// use the Keycloak SDK/javascript-adapter for the implementation to access Keycloak
 	import Keycloak from "keycloak-js";
+
+	// kc - instantiation Keycloak javascript-adapter instance
+	// @ts-ignore
 	let kc = new Keycloak("/keycloak.json");
 
 	let logged_in = null;
 
-
+	// init - 
 	kc.init({ onLoad: "check-sso" }).then((auth) => {
 		
 		logged_in = auth;
 		if (auth) {
 			logged_in = true;
 
-			localStorage.setItem("svelte-token", kc.token);
-    	localStorage.setItem("svelte-refresh-token", kc.refreshToken);
+			localStorage.setItem("access-token", kc.token);
+    	localStorage.setItem("refresh-token", kc.refreshToken);
 
 			setTimeout(() => {
-        kc.updateToken(70).success((refreshed) => {
+        kc.updateToken(5).then((refreshed) => {
             if (refreshed) {
+								console.info('Token was successfully refreshed');
                 console.debug('Token refreshed' + refreshed);
 								console.info('Token refreshed' + refreshed);
             } else {
+								console.info('Token is still valid');
                 console.warn('Token not refreshed, valid for '
                     + Math.round(kc.tokenParsed.exp + kc.timeSkew - new Date().getTime() / 1000) + ' seconds');
             }
-        }).error(() => {
+        }).catch((error) => {
             console.error('Failed to refresh token');
+						console.error(error)
         });
-    	}, 60000)
+    	}, 10000)
 			console.info("Authenticated");
 
 			subTitle.set(`Currently Logged in as: ${kc.tokenParsed?.preferred_username} `);
@@ -49,6 +55,8 @@
 				userInfo.set(user)
 			});
 		} else {
+			localStorage.removeItem("access-token", kc.token);
+    	localStorage.removeItem("refresh-token", kc.refreshToken);
 			subTitle.set("Login");
 			navBar.set({
 				bar: welcomeBar
@@ -61,8 +69,8 @@
 
 <div uk-grid>
   <div class="uk-width-1-2@m uk-text-left">
-		{#if logged_in && $userInfo.preferred_username}
-		<p> You are logged in as {$userInfo.preferred_username} </p>
+		{#if logged_in && kc.tokenParsed?.preferred_username}
+		<p> You are logged in as {kc.tokenParsed?.preferred_username} </p>
 
 		<pre>{JSON.stringify($userInfo, null,2)}</pre>
 
