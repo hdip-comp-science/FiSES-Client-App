@@ -1,5 +1,5 @@
-<script>
-  import {navBar, mainBar, subTitle, title} from "../stores";
+<!-- <script>
+  import {navBar, mainBar, subTitle, title} from "../store";
   import Keycloak from 'keycloak-js';
 
   title.set("Field Service Engineering Solutions");
@@ -33,4 +33,4 @@
   console.log(error);
   });
 
-</script>
+</script> -->

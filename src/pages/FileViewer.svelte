@@ -1,6 +1,6 @@
 <script>
   import {onMount} from 'svelte'
-  import {navBar, mainBar, subTitle, title} from "../stores";
+  import {navBar, mainBar, subTitle, title} from "../store";
 
   title.set("Field Service Engineering Solutions");
   subTitle.set("Document Viewer");
