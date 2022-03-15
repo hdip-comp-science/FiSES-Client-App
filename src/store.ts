@@ -2,10 +2,10 @@ import { writable } from "svelte/store";
 
 export const welcomeBar = [
   {
-    title: "Log In",
+    title: "Secure",
     icon: "fas fa-sign-in-alt fa-2x",
     colour: "color:green",
-    link: "/#/documents",
+    link: "/#/secure",
   },
 ];
 
@@ -24,6 +24,12 @@ export const mainBar = [{
   icon: "fas fa-home fa-2x",
   colour: "color:rgb(152, 37, 37)",
   link: "/",
+  
+}, {
+  title: "Secure",
+  icon: "fas fa-sign-in-alt fa-2x",
+  colour: "color:green",
+  link: "/#/secure",
 }];
 
 

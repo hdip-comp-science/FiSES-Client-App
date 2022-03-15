@@ -52,8 +52,8 @@
 				userInfo.set(user)
 			});
 		} else {
-			localStorage.removeItem("access-token", kc.token);
-    	localStorage.removeItem("refresh-token", kc.refreshToken);
+			this.localStorage.removeItem("access-token", kc.token)
+    	this.localStorage.removeItem("refresh-token", kc.refreshToken);
 			subTitle.set("Login");
 			navBar.set({
 				bar: welcomeBar
@@ -93,7 +93,7 @@
   </div>
   <div class="uk-width-1-2@m uk-text-left">
     <div class="uk-width-2xlarge ">
-      <h3 class="uk-heading-small uk-flex"> Welcome </h3>
+      <h3 class="uk-heading-small uk-flex"> Welcome</h3>
       <p> Our services include Cleanroom Validation, Calibrations (on and offsite), Equipment Sales and Hire. EMS’s customer focus approach ensures innovative solutions are always achieved. <br>
 
         Our Company offers the latest innovative range of measurement and environmental monitoring products in addition to end-to-end services including onsite calibration across a range of industries.</p>

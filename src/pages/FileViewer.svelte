@@ -33,11 +33,3 @@
     <h1>hello</h1>
   </div>
 </div>
-
-
-<!-- 
-  Aim: 
-    1. fetch url
-    2. parse json - get document body content
-    3. return file to client
- -->
