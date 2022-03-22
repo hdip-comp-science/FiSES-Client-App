@@ -1,18 +1,18 @@
 <script>
-  import { setContext, onMount } from "svelte";
-  // import { authStore } from './store';
-  // import { AuthService } from "./auth-service";
-  import {DocumentService} from "./document-service";
+  import { setContext} from "svelte";
+  import { DocumentService } from "./document-service";
   import Main from  "./pages/Main.svelte";
   import Docs from "./pages/Docs.svelte";
   import FileViewer from "./pages/FileViewer.svelte";
+  import NotFound from "./components/NotFound.svelte";
   import Contact from "./pages/Contact.svelte";
   import Navigator from "./components/Navigator.svelte";
   import Router from "svelte-spa-router";
   import Secure from "./pages/Secure.svelte";
 
   // enable the sharing of doc-service obj using context
-  setContext("DocumentService", new DocumentService("http://localhost:4000"));
+  setContext("DocumentService", new DocumentService("http://localhost:8010/proxy"));
+
 
   // onMount(() => {
 	// 	authStore.set(
@@ -34,6 +34,7 @@
     "/contact": Contact,
     "/file": FileViewer,
     "/secure": Secure,
+    "*": NotFound
   }
 </script>
 

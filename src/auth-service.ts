@@ -75,6 +75,7 @@ export class AuthService {
       this.logged_in=auth;
       if(auth) {
         this.logged_in=true;
+        auth = true;
 
         localStorage.setItem(this.localStorageMapping.access_token, this.kc.token);
     	  localStorage.setItem(this.localStorageMapping.refresh_token, this.kc.refreshToken);

@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="uk-card uk-card-small uk-text-center uk-padding-remove">
-      <a target="_blank" href="https://github.com/hdip-comp-science/FiSES-Client-App">
+      <a target="_blank" href="https://github.com/hdip-comp-science/FiSES-Client-App" rel="noopener noreferrer">
         <div>
           <i class="fab fa-github-square fa-3x" style="color:rgb(95, 96, 173)" title="Source repo" uk-tooltip="Source repo"></i>
         </div>
