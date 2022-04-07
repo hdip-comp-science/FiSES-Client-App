@@ -1,5 +1,6 @@
+// Encapsulates access to external API
+// Maintaines cache of documents
 import axios from "axios";
-import post from 'svelte-spa-router';
 export class DocumentService {
 
   // assign an empty array to newly created documentList variable
@@ -37,16 +38,6 @@ export class DocumentService {
 
   async removeDoc(id: any) {
     try {
-      // let headers = new Headers();
-      // headers.append('Content-Type', 'application/json');
-      // headers.append('Accept', 'application/json');
-
-      // headers.append('Access-Control-Allow-Origin', '*');
-      // headers.append('Access-Control-Allow-Credentials', 'true');
-
-      // headers.append('Access-Control-Allow-Credentials', 'true');
-
-      // headers.append('Access-Control-Allow-Method', 'DELETE');
       const response = await axios.delete(this.baseUrl+`/api/v1/document/${id}`);
       this.removeDoc  = await response.data;
       console.log(this.removeDoc);
@@ -67,16 +58,5 @@ export class DocumentService {
     4. refresh the list to observe the change.
 
   */
-  async deleteDocument() {
-    try {
-      const response = await axios.delete(this.baseUrl + "/api/v1/document/{id}")
-      this.removeDocument = await response.data;
-      console.info(this.removeDocument)
-      return this.documentList;
-    } catch (error: any) {
-      console.error('Error:', error);
-      return [];
-    }
-  }
   
 }

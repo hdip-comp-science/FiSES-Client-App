@@ -1,3 +1,4 @@
+<!-- This component will check whether the user has right roles -->
 <script>
     import { onMount } from "svelte";
     import { authStore } from '../store';

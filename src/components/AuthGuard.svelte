@@ -22,7 +22,7 @@
           auth = value;
       });
       if(forceLogin && user === null){
-          push("/");
+          push("/secure");
       }
   });
   </script>

@@ -1,9 +1,9 @@
 <script>
   let files;
   let statusCode=0;
- 
   async function handleSubmit() {
     if (files.length > 0) {
+      var date = new Date();
       const formData = new FormData();
       formData.append("file", files[0]);
       const response = await fetch("http://localhost:4000/api/v1/upload", {

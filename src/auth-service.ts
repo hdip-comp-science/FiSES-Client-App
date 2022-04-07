@@ -113,18 +113,9 @@ export class AuthService {
       }
       this.initialized.set(true);
     }).catch ((error) => {
+      // window.location.reload();
       console.error('Error:', error);
     });
-    // this.kc.onTokenExpired = () => {
-    //     //Setting the update (refresh) of our token
-    //     this.kc.updateToken(5).then((refreshed) => {
-    //         if (refreshed) {
-    //           localStorage.setItem(this.localStorageMapping.access_token,this.kc.token);
-    //           localStorage.setItem(this.localStorageMapping.refresh_token,this.kc.refreshToken);
-    //           localStorage.setItem(this.localStorageMapping.exp, this.kc.tokenParsed["exp"]);
-    //         }
-    //     });
-    // };
   }
 
   private buildInitParams(onLoad: string = "login-required", silentCheckSsoRedirectUri?: string): any {
@@ -137,8 +128,8 @@ export class AuthService {
   }
 
   public login() {
-    // this.init(this.buildInitParams());
-    this.init(this.initOptions);
+    this.init(this.buildInitParams());
+    // this.init(this.initOptions);
 
   }
 

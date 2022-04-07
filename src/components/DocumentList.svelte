@@ -1,20 +1,20 @@
 <script>
   import {onMount, getContext} from 'svelte'
+  import RoleGuard from '../components/RoleGuard.svelte';
   const documentService = getContext("DocumentService");
   
   let documentList;
-  // let removeDocument;
   onMount(async () => {
     documentList = await documentService.getDocuments()
   });
 
-  function removeDocument(id) { 
-    documentService.removeDoc(id) 
-  }
-
-  // async (id) => {
-  //   await documentService.removeDoc(id) 
+  // function removeDocument(id) { 
+  //   documentService.removeDoc(id) 
   // }
+
+   
+  let removeDocument = id => documentService.removeDoc(id)
+
 </script>
 
 
@@ -25,7 +25,7 @@
   <table class="uk-table">
     <thead>
       <th>
-        Title
+        <b>Title</b>
       </th>
       <th>
         Author
@@ -33,18 +33,24 @@
       <th>
         Version
       </th>
-      <th>
-        Remove
-      </th>
+      <RoleGuard roles=app-admin>
+        <th>
+          Remove
+        </th>
+      </RoleGuard>
+      
     </thead>
     <tbody class="uk-text-left">
       {#if documentList}
         {#each documentList as document}
           <tr>
-            <td><a href="http://localhost:4000/api/v1/document/{document.ID}" target="_blank" rel="noopener noreferrer">{document.title}</a></td>
+            <td><a href="http://localhost:4000/api/v1/document/{document.ID}" target="_blank">{document.title}</a><td>
             <td>{document.author}</td>
             <td>{document.version}</td>
-            <td><i class="fas fa-trash fa-1x" style="color:rgb(255,3,3)" on:click={() => removeDocument(document.ID)}></i></td>
+            <RoleGuard roles=app-admin>
+              <td><i class="fas fa-trash fa-1x" style="color:rgb(255,3,3)" on:click={() => removeDocument(document.ID)}></i></td>
+            </RoleGuard>
+            
           </tr>
         {/each}
       {/if}
