@@ -21,13 +21,16 @@
         <b style="color: black;">Event</b>
     </th>
     <th>
+        <b style="color: black;">Description</b>
+    </th>
+    <th>
+        <b style="color: black;">Location</b>
+    </th>
+    <th>
         <b style="color: black;">Start Time</b>
     </th>
     <th>
         <b style="color: black;">finish Time</b>
-    </th>
-    <th>
-        <b style="color: black;">Email</b>
     </th>
     </thead>
     <tbody class="uk-text-left">
@@ -36,9 +39,10 @@
         {#each calendarEventList.items as event}
         <tr>
             <td>{event.summary}</td>
+            <td>{event.description}</td>
+            <td>{event.location}</td>
             <td>{event.start.dateTime}</td>
             <td>{event.end.dateTime}</td>
-            <td>{event.creator.email}</td>
         </tr>
         <!-- {@debug calendarEventList} -->
         {/each}

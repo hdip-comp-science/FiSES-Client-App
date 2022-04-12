@@ -6,7 +6,6 @@ export class DocumentService {
   // assign an empty array to newly created documentList variable
   documentList = []
   baseUrl = "";
-  removeDocument;
 
   constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
@@ -58,5 +57,4 @@ export class DocumentService {
     4. refresh the list to observe the change.
 
   */
-  
 }
