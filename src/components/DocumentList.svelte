@@ -1,19 +1,17 @@
 <script>
-  import {onMount, getContext} from 'svelte'
-  import RoleGuard from '../components/RoleGuard.svelte';
-  const documentService = getContext("DocumentService");
-  
-  let documentList;
-  onMount(async () => {
-    documentList = await documentService.getDocuments()
-  });
+	import {onMount, getContext} from 'svelte'
+	import RoleGuard from '../components/RoleGuard.svelte';
+	const documentService = getContext("DocumentService");
 
-  // function removeDocument(id) { 
-  //   documentService.removeDoc(id) 
-  // }
+	let documentList;
+	onMount(async () => {
+	documentList = await documentService.getDocuments()
+	});
 
-   
-  let removeDocument = id => documentService.removeDoc(id)
+	// function removeDocument(id) { 
+	//   documentService.removeDoc(id) 
+	// }
+	let removeDocument = id => documentService.removeDoc(id)
 
 </script>
 
@@ -25,17 +23,17 @@
   <table class="uk-table">
     <thead>
       <th>
-        <b>Title</b>
+        <b style="color: black;">Title</b>
       </th>
       <th>
-        Author
+        <b style="color: black;">Author</b>
       </th>
       <th>
-        Version
+        <b style="color: black;">Version</b>
       </th>
       <RoleGuard roles=app-admin>
         <th>
-          Remove
+          <b style="color: black;">Remove</b>
         </th>
       </RoleGuard>
       
@@ -44,7 +42,7 @@
       {#if documentList}
         {#each documentList as document}
           <tr>
-            <td><a href="http://localhost:4000/api/v1/document/{document.ID}" target="_blank">{document.title}</a><td>
+            <td><a href="http://localhost:4000/api/v1/document/{document.ID}" target="_blank" >{document.title}</a></td>
             <td>{document.author}</td>
             <td>{document.version}</td>
             <RoleGuard roles=app-admin>
