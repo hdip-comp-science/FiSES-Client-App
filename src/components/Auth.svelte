@@ -3,11 +3,11 @@
 	// use the Keycloak SDK/javascript-adapter for the implementation to access Keycloak
 	import Keycloak from "keycloak-js";
 	import {title, subTitle, navBar, welcomeBar, mainBar} from "../store"
-  // import fises from "/fises.png";
-  title.set("Field Service Engineering Solutions");
-  navBar.set({
-    bar: welcomeBar
-  });
+	// import fises from "/fises.png";
+	title.set("Field Service Engineering Solutions");
+	navBar.set({
+		bar: welcomeBar
+	});
 
 	// kc - instantiation Keycloak javascript-adapter instance
 	//@ts-ignore
@@ -24,10 +24,10 @@
 			logged_in = true;
 
 			localStorage.setItem("access-token", kc.token);
-    	localStorage.setItem("refresh-token", kc.refreshToken);
+    		localStorage.setItem("refresh-token", kc.refreshToken);
 
 			setTimeout(() => {
-        kc.updateToken(70).then((refreshed) => {
+       	 kc.updateToken(70).then((refreshed) => {
             if (refreshed) {
                 console.debug('Token refreshed' + refreshed);
 								console.info('Token refreshed' + refreshed);
@@ -53,7 +53,7 @@
 			});
 		} else {
 			this.localStorage.removeItem("access-token", kc.token)
-    	this.localStorage.removeItem("refresh-token", kc.refreshToken);
+    		this.localStorage.removeItem("refresh-token", kc.refreshToken);
 			subTitle.set("Login");
 			navBar.set({
 				bar: welcomeBar
