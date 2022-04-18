@@ -1,7 +1,4 @@
 <script>
-    import Select from "./Select.svelte";
-    let selected;
-
     let files;
     let statusCode=0;
     async function handleSubmit() {
@@ -29,12 +26,7 @@
 </script>
  
 <form on:submit|preventDefault={handleSubmit}>
-    <Select options={[{"text":"SOP"},{"text":"Training Certs"},{"text":"Cal Docs"}]}
-            display_func={o => o.text}
-            bind:value={selected}/>
-    {JSON.stringify(selected, null, 2)}
-    {(console.log(selected),'')}
-    <label for="file">File</label>
+    <label for="file"></label>
     <input required id="file" type="file" bind:files />
     <input type="submit" value="Upload file" />
 </form>

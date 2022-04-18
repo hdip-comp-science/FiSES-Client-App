@@ -33,7 +33,10 @@
               </div>
         
             </fieldset>
-            <button class="uk-button uk-button-primary" type="submit">Send</button>
+            <div class="uk-flex uk-flex-column uk-width-1-1">
+              <button class="uk-button uk-button-primary" type="submit">Send</button>
+            </div>
+           
         </form>
 
         </div>

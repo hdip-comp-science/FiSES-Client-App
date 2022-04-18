@@ -29,11 +29,6 @@ export const mainBar = [{
     icon: "fas fas fa-calendar fa-2x",
     colour: "color:rgb(152, 37, 37)",
     link: "/#/events",
-}, {
-    title: "Secure",
-    icon: "fas fas fa-lock fa-2x",
-    colour: "color:green",
-    link: "/#/secure",
 }];
 
 export const customerBar = [{

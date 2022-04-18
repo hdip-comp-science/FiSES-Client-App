@@ -38,7 +38,8 @@
         </div>
     </div>
     <div class="uk-flex uk-flex-column uk-width-1-1">
-        <button  type="submit" >Create Booking</button>
+        <button class="uk-button uk-button-primary" type="submit">Create Booking</button>
+        <!-- <button  type="submit" >Create Booking</button> -->
         <!-- <input type="submit" value="Upload file" /> -->
     </div>   
 </form>

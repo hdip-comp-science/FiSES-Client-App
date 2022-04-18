@@ -11,10 +11,7 @@ export class CalendarService {
         this.calendarUrl = calendarUrl;
     }
     
-       
-    
     async getCalendarEvents() {
-        
         try {
             const response = await fetch(this.calendarUrl + "/events?key="+this.apiKey)
             // console.log(response)
