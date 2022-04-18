@@ -1,0 +1,8 @@
+{
+  "realm": "field-service-engineering-solutions",
+  "auth-server-url": "http://localhost:8080/auth/",
+  "ssl-required": "external",
+  "resource": "svelte",
+  "public-client": true,
+  "confidential-port": 0
+}
